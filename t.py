@@ -52,10 +52,10 @@ try:
             if data.get("type", "").endswith(".completed"):
                 transcript = data.get("transcript", "").strip()
                 if transcript:
-                    print(f"\n[原文]: {transcript}")
+                    print(f"\n[原文]: {transcript}", flush=True)
                     # 调用翻译接口
                     translated = translate_text(transcript)
-                    print(f"[译文]: {translated}")
+                    print(f"[译文]: {translated}", flush=True)
         except json.JSONDecodeError:
             # 忽略非 JSON 的初始化日志行
             pass
